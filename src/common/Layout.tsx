@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from './Header';
 
-export default function Layout(): React.JSX.Element {
+export default function Layout({ children }: React.PropsWithChildren): React.JSX.Element {
     return <>
-        <Header />
+        {children}
     </>;
 }

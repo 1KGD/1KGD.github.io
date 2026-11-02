@@ -1,5 +1,4 @@
 import React from 'react';
-import Test from './test.mdx'
 import style from './style';
 
 export function Link({ href, children }: { href: string } & React.PropsWithChildren): React.JSX.Element {
@@ -7,10 +6,14 @@ export function Link({ href, children }: { href: string } & React.PropsWithChild
 }
 
 export function Header({ children }: React.PropsWithChildren): React.JSX.Element {
-    return <div style={style.header}>{children}</div>;
+    return <h1 style={style.header}>{children}</h1>;
 }
 
-export default {
+const components: { [key: string]: (args: any) => React.JSX.Element } = {
     a: Link,
     h1: Header,
-} as { [key: string]: (args: unknown) => React.JSX.Element }
+};
+
+export default function Mdx({ element }: { element: React.ReactElement }): React.JSX.Element {
+    return React.cloneElement(element, { components: components as {} } as {});
+} 
