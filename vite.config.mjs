@@ -2,10 +2,11 @@
 
 import mdx from '@mdx-js/rollup';
 import { defineConfig } from 'vite';
+import rbl from 'babel-plugin-rbl/vite';
 
 const viteConfig = defineConfig({
     plugins: [
-        mdx()
+        mdx(), rbl()
     ]
 });
 

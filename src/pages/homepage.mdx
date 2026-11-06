@@ -1,1 +1,11 @@
-# 1kgd.github.io
+import Title from "../components/Title"
+import { Code } from '../common/Mdx'
+import code from '../../index.html?raw'
+
+export function C() {
+    return code
+}
+
+<Title />
+
+<Code language="html"><C/></Code>
