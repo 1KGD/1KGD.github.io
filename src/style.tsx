@@ -36,6 +36,8 @@ const style: { [key in keyof typeof ElementType]: React.CSSProperties } = {
         height: "100%",
         overflow: "scroll",
 
+        fontFamily: "Google Sans Code",
+
         background: color("bg"),
         color: color("text"),
     },
