@@ -18,7 +18,7 @@ export function Code({ language, children }: { language: string } & React.PropsW
         height="80vh"
         value={(new DOMParser).parseFromString(renderToString(children), "text/html").documentElement.textContent /* Absolutely cursed */}
         options={{
-            readOnly: true, fontFamily: "Google Sans Code", fontSize: 16, scrollbar: { alwaysConsumeMouseWheel: false }
+            readOnly: true, fontFamily: "Google Sans Code", fontSize: 16, scrollbar: { alwaysConsumeMouseWheel: false }, minimap: { enabled: false }
         }}
         theme="hc-black"
         loading={<Loaders.SyncLoader loading color="green" cssOverride={{ display: "block", margin: "auto" }} />}
